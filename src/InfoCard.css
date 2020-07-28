@@ -1,0 +1,15 @@
+
+.infoCard {
+    height: 350px;
+    width: 300px;
+    margin: 30px;
+    display: flex;
+    background-color: #eee !important;   
+    align-items: center;
+    border-radius: 1rem !important;
+}
+
+.infoCard__title{
+    font-weight: 600 !important;
+}
+
