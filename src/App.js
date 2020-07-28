@@ -2,22 +2,47 @@ import React, { useEffect, useState, useContext } from "react";
 import "./App.css";
 import InfoCard from './InfoCard'
 import Catogeroy from './Catogeroy';
-import {BarProvider} from './BarContext';
+// import {BarProvider} from './BarContext';
 
 export default function App() {
 
   const [drinks, setDrinks] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
+  const [filter, setFilter] = useState("i");
+  const [searchTerm, setSearchTerm] = useState("");
 
+  useEffect(() => {
+      const ingrediants = async () => {
+      await fetch(`https://the-cocktail-db.p.rapidapi.com/filter.php?${filter}=${searchTerm}`, {
+          method: "GET",
+          headers: {
+          "x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
+          "x-rapidapi-key": "22dc1cf4e3msha6eee43c752a385p18c288jsnb80a65af1601"
+          }
+      })
+          .then(response => {
+          return response.json();
+          })
+          .then(data => {
+          setSearchResults(data.drinks);
+          })
+          .catch(err => {
+          console.log(err);
+          });
+      };
+
+      ingrediants();
+  }, [filter, searchTerm]);
 
   const handleChange = event => {
     setSearchTerm(event.target.value);
   };
 
-  const [filter, setFilter, searchTerm, setSearchTerm, searchResults] = useContext();
+
 
   return (
 
-    <BarProvider>
+
           <div className="app">
           <h1 className="app__title">DilBar</h1>
           <input
@@ -44,9 +69,10 @@ export default function App() {
           }
           </div>
         </div>
-    </BarProvider>
+
     
   );
 }
+
 
 
