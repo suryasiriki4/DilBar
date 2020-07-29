@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import "./App.css";
 import InfoCard from './InfoCard'
 import Catogeroy from './Catogeroy';
+import Alcholic from './Alcholic';
 // import {BarProvider} from './BarContext';
 
 export default function App() {
@@ -35,6 +36,7 @@ export default function App() {
   }, [filter, searchTerm]);
 
   const handleChange = event => {
+    setFilter("i");
     setSearchTerm(event.target.value);
   };
 
@@ -45,23 +47,34 @@ export default function App() {
 
           <div className="app">
           <h1 className="app__title">DilBar</h1>
-          <input
-            className="app__searchInput"
-            type="text"
-            placeholder="Enter your Ingredients..."
-            onChange={handleChange}
-            value={searchTerm}
-          />
 
-          {/* <Catogeroy filterFunction={setFilter} filterOption={setSearchTerm} /> */}
+          <div className="app__searchDiv">
 
+              <form action="">
+                  <input
+                    className="app__searchInput"
+                    type="text"
+                    placeholder="Enter your Ingredients..."
+                    onChange={handleChange}
+                    autoFocus
+                    value={searchTerm}
+                  />
+
+                  <button className="app__searchSubmission" type="submit" value={searchTerm}>clear input</button>
+              </form>
+          </div>
+
+          <div className="app__filters">
+            <Catogeroy filterFunction={[filter,setFilter]} filterOption={[searchTerm,setSearchTerm]} />
+            <Alcholic filterFunction={[filter,setFilter]} filterOption={[searchTerm,setSearchTerm]} />
+          </div>
           {/* {console.log(filter, searchTerm)} */}
 
           <div className="app__search-card-results">
           {
             searchResults.map(drink => (
               <div className="app__search-card">
-                  <InfoCard drink={drink.strDrink} img_url={drink.strDrinkThumb} />    
+                  <InfoCard id={drink.idDrink} drink={drink.strDrink} img_url={drink.strDrinkThumb} />    
               </div>
             
           )
@@ -73,6 +86,7 @@ export default function App() {
     
   );
 }
+
 
 
 

@@ -1,15 +1,24 @@
 
 .infoCard {
-    height: 350px;
+    height: 410px;
     width: 300px;
     margin: 30px;
     display: flex;
     background-color: #eee !important;   
     align-items: center;
-    border-radius: 1rem !important;
+    border-radius: 2rem !important;
 }
 
 .infoCard__title{
     font-weight: 600 !important;
+}
+
+.infoCard__image {
+    margin-top: -5px;
+}
+
+.infoCard__ingredients, .infoCard__glass {
+    color: black !important;
+    font-size: 1.3rem !important;
 }
 

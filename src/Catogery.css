@@ -1,0 +1,26 @@
+#dropdown-basic-button {
+    background: linear-gradient(-90deg,#c271bd,#8a3585) !important;
+    border-radius: 60px;
+    transform: scale(2,2);
+    border: none;
+    margin-top: 20px;
+}
+
+#dropdown-basic-button:focus {
+    background: #c271bd !important;
+    outline: none;
+}
+
+.dropdown-menu {
+    transform: scale(3);
+    border-radius: 20px;
+}
+
+.dropdown-item {
+    transform: scale(1.2);
+}
+
+.dropdown-item:hover {
+    transform: scale(2);
+    border-radius: 60px;
+}
