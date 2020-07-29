@@ -45,6 +45,10 @@ body {
   border: none;
 }
 
+.app__searchSubmission:hover {
+  background: #c271bd;
+}
+
 .app__filters {
   display: flex;
   justify-content: space-around;
@@ -65,4 +69,14 @@ body {
 
 .app__searchInput:focus, .app__searchSubmission:focus {
   outline: none;
+}
+
+.app__NotFound {
+  color: #8a3585;
+}
+
+@media screen and (max-width: 600px) {
+  .app__searchInput {
+    width: 100%;
+  }
 }

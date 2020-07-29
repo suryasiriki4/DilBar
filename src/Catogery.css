@@ -5,7 +5,7 @@
     margin-top: 20px;
 }
 
-#dropdown-basic-button:focus {
+#dropdown-basic-button:hover {
     background: #c271bd !important;
     outline: none;
     border: none;
