@@ -11,6 +11,8 @@ function Alcholic(props) {
     const [optionList, setOptionList] = useState([]);
     const [filter,setFilter] = props.filterFunction;
     const [searchTerm, setSearchTerm] = props.filterOption;
+
+    
     useEffect(() => {
         const options = async () => {
             await fetch("https://the-cocktail-db.p.rapidapi.com/list.php?a=list", {

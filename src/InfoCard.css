@@ -1,6 +1,5 @@
 
-.infoCard {
-    height: 410px;
+.infoCard {    
     width: 300px;
     margin: 30px;
     display: flex;
@@ -13,12 +12,9 @@
     font-weight: 600 !important;
 }
 
-.infoCard__image {
-    margin-top: -5px;
-}
+
 
 .infoCard__ingredients, .infoCard__glass {
     color: black !important;
-    font-size: 1.3rem !important;
 }
 

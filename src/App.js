@@ -3,7 +3,6 @@ import "./App.css";
 import InfoCard from './InfoCard'
 import Catogeroy from './Catogeroy';
 import Alcholic from './Alcholic';
-// import {BarProvider} from './BarContext';
 
 export default function App() {
 
@@ -43,8 +42,6 @@ export default function App() {
 
 
   return (
-
-
           <div className="app">
           <h1 className="app__title">DilBar</h1>
 
@@ -60,7 +57,7 @@ export default function App() {
                     value={searchTerm}
                   />
 
-                  <button className="app__searchSubmission" type="submit" value={searchTerm}>clear input</button>
+                  <button className="app__searchSubmission" type="submit" value={searchTerm}>refreash</button>
               </form>
           </div>
 
@@ -68,17 +65,14 @@ export default function App() {
             <Catogeroy filterFunction={[filter,setFilter]} filterOption={[searchTerm,setSearchTerm]} />
             <Alcholic filterFunction={[filter,setFilter]} filterOption={[searchTerm,setSearchTerm]} />
           </div>
-          {/* {console.log(filter, searchTerm)} */}
 
           <div className="app__search-card-results">
           {
             searchResults.map(drink => (
               <div className="app__search-card">
                   <InfoCard id={drink.idDrink} drink={drink.strDrink} img_url={drink.strDrinkThumb} />    
-              </div>
-            
-          )
-          )
+              </div>            
+          ))
           }
           </div>
         </div>

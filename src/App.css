@@ -6,14 +6,10 @@ body {
   align-items: center;
 }
 
-/* .app__cardContainer {
-
-} */
-
 .app__title {
   color: #771572;
   margin: 40px;
-  transform: scale(3);
+  transform: scale(2);
   font-family: gilroy-extra-bold;
   font-weight: 800;
 }
@@ -30,16 +26,20 @@ body {
   width: 35vw;
 }
 
+
+
+
 .app__searchSubmission {
   position: relative;
   right: 60px;
+  top: 1px;
   box-shadow: -4px 0 15px rgba(0,0,0,.1);
   cursor: pointer;
   align-items: center;
   justify-content: center;
   background: linear-gradient(90deg,#c271bd,#8a3585);
-  font-size: 15px;
-  height: 40px;
+  font-size: 18px;
+  height: 48px;
   color: #fff;
   border-radius: 60px;
   border: none;
@@ -61,4 +61,8 @@ body {
 
 .app__search-card {
   display: inline-grid;
+}
+
+.app__searchInput:focus, .app__searchSubmission:focus {
+  outline: none;
 }

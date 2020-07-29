@@ -42,7 +42,7 @@ function Catogeroy(props) {
     }
 
     const handleClickOption = (eventKey) => {
-       setSearchTerm(eventKey);
+            setSearchTerm(eventKey);
     }
 
     return (

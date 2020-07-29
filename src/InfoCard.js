@@ -40,7 +40,7 @@ function InfoCard(props) {
                     image={props.img_url} 
                     title={props.drink}/>
                     <CardContent className="infoCard__content">
-                        <Typography className="infoCard__title" gutterBottom variant="h4" component="h1">
+                        <Typography className="infoCard__title" gutterBottom variant="h5" component="h3">
                             {props.drink}
                         </Typography>
                         <Typography className="infoCard__ingredients" variant="body2" color="textSecondary" component="h3">
